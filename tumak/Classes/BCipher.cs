@@ -9,20 +9,19 @@ namespace tumak.Classes
 {
     class BCipher : ICipher
     {
-        private const string Alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-
         public string Encode(string input)
         {
-            return Reflect(input);
+            return BCipherScript(input);
         }
 
         public string Decode(string input)
         {
-            return Reflect(input);
+            return BCipherScript(input);
         }
 
-        private string Reflect(string input)
+        private string BCipherScript(string input)
         {
+            string Alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
             char[] result = new char[input.Length];
             for (int i = 0; i < input.Length; i++)
             {

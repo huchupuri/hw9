@@ -9,20 +9,19 @@ namespace tumak.Classes
 {
     class ACipher : ICipher
     {
-        private const string letters = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-
         public string Encode(string input)
         {
-            return Shift(input, 1);
+            return ACipherScript(input, 1);
         }
 
         public string Decode(string input)
         {
-            return Shift(input, -1);
+            return ACipherScript(input, -1);
         }
 
-        private string Shift(string input, int shift)
+        private string ACipherScript(string input, int shift)
         {
+            string letters = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
             char[] result = new char[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
@@ -34,7 +33,7 @@ namespace tumak.Classes
                 {
                     int shiftedIndex = (index + shift + letters.Length) % letters.Length;
                     char shiftedChar = letters[shiftedIndex];
-                    result[i] = char.IsUpper(c) ? char.ToUpper(shiftedChar) : shiftedChar;
+                    result[i] = char.IsUpper(input[i]) ? char.ToUpper(shiftedChar) : shiftedChar;
                 }
                 else
                 {

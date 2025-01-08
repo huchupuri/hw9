@@ -40,14 +40,12 @@ namespace hw
             point.MoveVer(-2);
             point.Display();
 
-            // Создание окружности
             Circle circle = new Circle(5, "Blue", true, 0, 0);
             circle.Display();
             circle.MoveVer(10);
             circle.ChangeColor("Green");
             circle.Display();
 
-            // Создание прямоугольника
             Rectangle rectangle = new Rectangle(4, 5, "Yellow", false, 2, 2);
             rectangle.Display();
             rectangle.ChangeVisibility(true);
