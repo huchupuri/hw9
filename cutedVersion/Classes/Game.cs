@@ -9,10 +9,10 @@ namespace BigRacesShow.Classes
 {
     internal abstract class Game : IGame
     {
-        public abstract string Name { get; }
+        public abstract string Name { get;}
         public void Play()
         {
-            Console.WriteLine($"Игра '{Name}' началась!");
+            Console.WriteLine($"игра {Name} началась");
             PlayGame();
             End();
         }
@@ -20,9 +20,9 @@ namespace BigRacesShow.Classes
 
         protected abstract void PlayGame();
 
-        protected virtual void End()
+        private void End()
         {
-            Console.WriteLine($"Игра '{Name}' завершена!");
+            Console.WriteLine($"игра {Name} завершена");
         }
     }
 }
